@@ -1,0 +1,15 @@
+﻿生成启动时间为 2022/12/8 0:24:58。
+     1>项目“C:\Users\宋畅\Desktop\test\Project_contact\Project_contact\Project_contact.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Program Files (x86)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt contact.c test.c
+         test.c
+         contact.c
+     1>c:\users\宋畅\desktop\test\project_contact\project_contact\contact.c(5): error C2106: “=”: 左操作数必须为左值
+     1>c:\users\宋畅\desktop\test\project_contact\project_contact\contact.c(24): error C2106: “=”: 左操作数必须为左值
+     1>c:\users\宋畅\desktop\test\project_contact\project_contact\contact.c(292): error C2106: “=”: 左操作数必须为左值
+         正在生成代码...
+     1>已完成生成项目“C:\Users\宋畅\Desktop\test\Project_contact\Project_contact\Project_contact.vcxproj”(Build 个目标)的操作 - 失败。
+
+生成失败。
+
+已用时间 00:00:00.32
