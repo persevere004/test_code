@@ -9,7 +9,6 @@ void menu()
 	printf("*********0.ÍË³ö                       ****************\n");
 	printf("------------------------------------------------------\n");
 }
-printf("hehe");
 int main()
 {
 	struct contact con;
