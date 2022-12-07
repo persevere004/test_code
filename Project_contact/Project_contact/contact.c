@@ -1,5 +1,5 @@
 #define  _CRT_SECURE_NO_WARNINGS  1
-#include "contact.h"
+#include "contact.h"//666
 void Initcontact(struct contact *ps)
 {
 	ps->data = (struct peoinfor *)calloc(DEFAULT_SZ, sizeof(struct peoinfor));
