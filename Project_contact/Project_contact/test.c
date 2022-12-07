@@ -1,5 +1,5 @@
 #define  _CRT_SECURE_NO_WARNINGS  1
-#include "contact.h"//helloworld
+#include "contact.h"
 void menu()
 {
 	printf("------------------------------------------------------\n");
@@ -9,6 +9,7 @@ void menu()
 	printf("*********0.ÍË³ö                       ****************\n");
 	printf("------------------------------------------------------\n");
 }
+printf("hehe");
 int main()
 {
 	struct contact con;
