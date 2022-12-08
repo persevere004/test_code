@@ -1,9 +1,10 @@
 #define  _CRT_SECURE_NO_WARNINGS  1
 #include "Student_Score_Administration.h"
-void menu()
+void main_menu()
 {
 	system("cls");
-	printf("************   学生信息管理系统    *************\n");
+	printf("-----------------------------------------------\n");
+	printf("************   学生信息管理系统    ************\n");
 	printf("************    1.学生信息维护     ************\n");
 	printf("************    2.课程信息维护     ************\n"); 
 	printf("************    3.成绩信息维护     ************\n");
@@ -12,48 +13,57 @@ void menu()
 	printf("************    6.课程成绩排名     ************\n");
 	printf("************    7.学生平均分排名   ************\n");
 	printf("************    8.显示学生信息     ************\n");
+	printf("************    9.保存学生信息     ************\n");
 	printf("************    0.退出管理系统     ************\n");
+	printf("-----------------------------------------------\n");
 }        
+
 int main()
 {
-	struct Stuinfor s[MAX];
-	Init_infor(s);
+     System Stu;
+	Init_information(&Stu);
 	int choice=0;
     do
 	{
-		menu();
+		main_menu();
 		printf("请选择:> ");
 		scanf("%d", &choice);
+		//getchar();
 		switch (choice)
-		{  
-		case 1:
-			//Student_information();
+		{
+		case STU_INFOR:
+			Student_information(&Stu);
 			break;
-		case 2:
+		case CURRICULU_INFOR:
 			//Curriculum_information();
 			break;
-		case 3:
+		case SCORE_INFOR:
 			//Score_information();
 			break;
-		case 4:
+		case SCORE_STATISTICS:
 			//Score_statistics();
 			break;
-		case 5:
+		case CREDIT_STATISTICS:
 			//Credit_statistics();
 			break;
-		case 6:
+		case SORT_BY_SCORE:
 			//Score_sort();
 			break;
-		case 7:
+		case SORT_BY_AVERAGE:
 			//Average_sort();
 			break;
-		case 8:
-			//print();
+		case PRESENT:
+			print();
 			break;
-		case 0:
+		case SAVE:
+			//Save_infor();
+			printf("保存成功\n");
+			break;
+		case EXIT:
+			//Save_infor();
 			printf("退出系统\n");
 			break;
-		default:
+		default :
 			printf("输入错误，请重新输入！");
 			break;
 		}

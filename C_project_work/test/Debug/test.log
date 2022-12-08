@@ -1,15 +1,15 @@
-﻿生成启动时间为 2022/12/5 20:11:57。
-     1>项目“D:\test_1\C_project_work\test\test\test.vcxproj”在节点 2 上(Build 个目标)。
+﻿生成启动时间为 2022/12/8 20:51:34。
+     1>项目“C:\Users\宋畅\Desktop\test_code\C_project_work\test\test.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
-         D:\Program Files (x86)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Student_Score_Administration.c test.c
-         test.c
-     1>d:\test_1\c_project_work\test\test\test.c(5): warning C4013: “system”未定义；假设外部返回 int
+         D:\Program Files (x86)\VC\bin\CL.exe /c /Z7 /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /GF /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Student_Score_Administration.c
+     1>cl : 命令行 warning D9007: “/Gm”需要“/Zi 或 /ZI”；选项被忽略
          Student_Score_Administration.c
-     1>d:\test_1\c_project_work\test\test\student_score_administration.c(10): error C2079: “stu”使用未定义的 struct“Stu”
-     1>d:\test_1\c_project_work\test\test\student_score_administration.c(10): error C2054: 在“stu”之后应输入“(”
-         正在生成代码...
-     1>已完成生成项目“D:\test_1\C_project_work\test\test\test.vcxproj”(Build 个目标)的操作 - 失败。
+       Link:
+         D:\Program Files (x86)\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\宋畅\Desktop\test_code\C_project_work\Debug\ProjectName.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\宋畅\Desktop\test_code\C_project_work\Debug\ProjectName.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\宋畅\Desktop\test_code\C_project_work\Debug\ProjectName.lib" /MACHINE:X86 Debug\Student_Score_Administration.obj
+         Debug\test.obj
+         test.vcxproj -> C:\Users\宋畅\Desktop\test_code\C_project_work\Debug\ProjectName.exe
+     1>已完成生成项目“C:\Users\宋畅\Desktop\test_code\C_project_work\test\test.vcxproj”(Build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:01.66
+已用时间 00:00:00.48
