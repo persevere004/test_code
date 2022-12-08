@@ -76,13 +76,13 @@ void Add(struct contact *ps)
 void print(const struct contact *ps)
 {
 	//system("cls");
-	printf("                       通讯录\n");
 	if (ps->size == 0)
 	{
 		printf("通讯录为空\n");
 	}
 	else
 	{
+		printf("                       通讯录\n");
 		int i = 0;
 		printf("-------------------------------------------------------\n");
 		printf("   %-5s\t%-4s\t%-5s\t%-12s\t%-20s\n", "姓名", "年龄", "性别", "电话", "住址");
@@ -202,12 +202,12 @@ void modify(struct contact *ps)
 			case Tele:
 				printf("请输入新电话:>");
 				scanf("%s", d);
-				strcpy(ps->data[ret].name, d);
+				strcpy(ps->data[ret].tele, d);
 				break;
 			case Addr:
 				printf("请输入新地址:>");
 				scanf("%s", e);
-				strcpy(ps->data[ret].name, e);
+				strcpy(ps->data[ret].addr, e);
 				break;
 			case Gender:
 				printf("请输入性别:>");
@@ -215,7 +215,7 @@ void modify(struct contact *ps)
 				strcpy(ps->data[ret].gender, b);
 				break;
 			case Exit:
-				printf("已退出!\n");
+				printf("已退出修改!\n");
 				break;
 			default :
 				printf("输入错误，请重新输入!\n");

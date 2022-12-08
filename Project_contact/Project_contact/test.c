@@ -43,6 +43,8 @@ int main()
 			break;
 		case SAVE:
 			save_contact(&con);
+			printf("±£´æ³É¹¦\n");
+			break;
 		case EXIT:
 			save_contact(&con);
 			freedata(&con);

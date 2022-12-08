@@ -6,7 +6,7 @@
 #define ADDRESS 50
 #define DEFAULT_SZ 3//默认通讯录初始容量为3
 //#define MAX 1000
-#define GENDER 5
+#define GENDER 10
 enum
 {
 	EXIT,
