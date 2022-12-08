@@ -6,10 +6,10 @@ void menu()
 	printf("*********1.增加联系人     2.删除联系人****************\n");
 	printf("*********3.修改联系人     4.查找联系人****************\n");
 	printf("*********5.显示联系人     6.排序      ****************\n");
-	printf("*********0.退出                       ****************\n");
+	printf("*********7.保存通讯录     0.退出      ****************\n");
 	printf("------------------------------------------------------\n");
 }
-//555
+
 int main()
 {
 	struct contact con;
@@ -41,7 +41,10 @@ int main()
 		case SORT:
 			sort(&con);
 			break;
+		case SAVE:
+			save_contact(&con);
 		case EXIT:
+			save_contact(&con);
 			freedata(&con);
 			printf("已退出\n");
 			break;

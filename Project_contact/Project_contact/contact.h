@@ -15,7 +15,8 @@ enum
 	MODIFY,
 	SEARCH,
 	PRINT,
-	SORT 
+	SORT ,
+	SAVE
 };
 enum
 {
@@ -57,3 +58,6 @@ void modify(struct contact *ps);
 void sort(struct contact *ps);
 //释放内存
 void freedata(struct contact*ps);
+//把通讯录保存到文件中
+void save_contact(struct contact *ps);
+

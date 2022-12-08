@@ -1,5 +1,24 @@
 #define  _CRT_SECURE_NO_WARNINGS  1
-#include "contact.h"//666
+#include "contact.h"
+void Isfull(struct contact *ps);
+void load_contact(struct contact *p)
+{
+	struct peoinfor temp = { 0 };
+	FILE *pread = fopen("contact.dat", "rb");
+	if (pread == NULL)
+	{
+		printf("load_contact::%s\n", strerror(errno));
+	}
+	while (fread(&temp, sizeof(struct peoinfor), 1, pread))
+	{
+		Isfull(p);
+		p->data[p->size] = temp;
+		p->size++;
+	}
+	fclose(pread);
+	pread = NULL;
+	
+}
 void Initcontact(struct contact *ps)
 {
 	ps->data = (struct peoinfor *)calloc(DEFAULT_SZ, sizeof(struct peoinfor));
@@ -10,6 +29,7 @@ void Initcontact(struct contact *ps)
 	}
 	ps->size = 0;
 	ps->capacity = DEFAULT_SZ;
+	load_contact(ps);
     //memset(ps->data, 0, sizeof(ps->data));
 	//ps->size = 0;
 }
@@ -290,4 +310,20 @@ void freedata(struct contact*ps)
 {
 	free(ps->data);
 	ps->data = NULL;
+}
+void save_contact(struct contact *ps)
+{
+	FILE* pfwrite = fopen("contact.dat", "wb");
+	if (pfwrite == NULL)
+	{
+		printf("save_contact::%s\n", strerror(errno));
+		return;
+	}
+	for (int i = 0; i < ps->size; i++)
+	{
+	   fwrite(&ps->data[i], sizeof(struct peoinfor), 1, pfwrite);
+		
+	}
+	fclose(pfwrite);
+	pfwrite = NULL;
 }
