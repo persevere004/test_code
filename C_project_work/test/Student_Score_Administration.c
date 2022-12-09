@@ -2,13 +2,14 @@
 #include "Student_Score_Administration.h" 
 void stuinfor_menu()
 {
-	system("cls");
+	//system("cls");
 	printf("-----------------------------------------------\n");
 	printf("************     学生信息维护      ************\n");
 	printf("************    1.添加学生信息     ************\n");
 	printf("************    2.删除学生信息     ************\n");
 	printf("************    3.修改学生信息     ************\n");
 	printf("************    4.查找学生信息     ************\n");
+	printf("************    0.退出             ************\n");
 	printf("-----------------------------------------------\n");
 }
 //学生信息维护
@@ -25,7 +26,7 @@ void Student_information(System *ps)
 		switch (choice)
 		{
 		case ADD_STU:
-			//Add_stu(&ps);
+			Add_stu(&ps);
 			break;
 		case DEL_STU:
 			break;
@@ -80,7 +81,7 @@ void Student_information(System *ps)
 	 }
 }
 
- 添加学生信息
+ //添加学生信息
  void Add_stu(System **ps)
  {
 	 system("cls");
