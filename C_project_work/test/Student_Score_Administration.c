@@ -109,7 +109,7 @@ void Student_information(System *ps)
 	 (*ps)->size++;
 	 printf("添加成功\n");
  }
-
+ //显示学生信息
  void print(const System *ps)
  {
 	 assert(ps!=NULL);
