@@ -17,7 +17,7 @@ void load_contact(struct contact *p)
 	}
 	fclose(pread);
 	pread = NULL;
-	
+
 }
 void Initcontact(struct contact *ps)
 {
@@ -30,7 +30,7 @@ void Initcontact(struct contact *ps)
 	ps->size = 0;
 	ps->capacity = DEFAULT_SZ;
 	load_contact(ps);
-    //memset(ps->data, 0, sizeof(ps->data));
+	//memset(ps->data, 0, sizeof(ps->data));
 	//ps->size = 0;
 }
 void Isfull(struct contact *ps)
@@ -50,27 +50,27 @@ void Isfull(struct contact *ps)
 			return;
 		}
 	}
-	
+
 }
 void Add(struct contact *ps)
 {
-	    Isfull(ps);
-		printf("请输入姓名：>");
-		//scanf("%s", ps->data[ps->size].name);
-		gets(ps->data[ps->size].name);
-		printf("请输入电话：>");
-		gets(ps->data[ps->size].tele);
-		//scanf("%s", ps->data[ps->size].tele);
-		printf("请输入住址：>");
-		gets(ps->data[ps->size].addr);
-		//scanf("%s", ps->data[ps->size].addr);
-		printf("请输入性别：>");
-		gets(ps->data[ps->size].gender);
-		//scanf("%s", ps->data[ps->size].gender);
-		printf("请输入年龄：>");
-		scanf("%d", &(ps->data[ps->size].age));
-		ps->size++;
-		printf("添加成功\n");
+	Isfull(ps);
+	printf("请输入姓名：>");
+	//scanf("%s", ps->data[ps->size].name);
+	gets(ps->data[ps->size].name);
+	printf("请输入电话：>");
+	gets(ps->data[ps->size].tele);
+	//scanf("%s", ps->data[ps->size].tele);
+	printf("请输入住址：>");
+	gets(ps->data[ps->size].addr);
+	//scanf("%s", ps->data[ps->size].addr);
+	printf("请输入性别：>");
+	gets(ps->data[ps->size].gender);
+	//scanf("%s", ps->data[ps->size].gender);
+	printf("请输入年龄：>");
+	scanf("%d", &(ps->data[ps->size].age));
+	ps->size++;
+	printf("添加成功\n");
 }
 
 void print(const struct contact *ps)
@@ -88,7 +88,7 @@ void print(const struct contact *ps)
 		printf("   %-5s\t%-4s\t%-5s\t%-12s\t%-20s\n", "姓名", "年龄", "性别", "电话", "住址");
 		for (i = 0; i < ps->size; i++)
 		{
-			printf("%d. %-5s\t%-4d\t%-5s\t%-12s\t%-20s\n",i+1,
+			printf("%d. %-5s\t%-4d\t%-5s\t%-12s\t%-20s\n", i + 1,
 				ps->data[i].name,
 				ps->data[i].age,
 				ps->data[i].gender,
@@ -99,7 +99,7 @@ void print(const struct contact *ps)
 	}
 }
 
-static int Find_by_name(const struct contact *ps,char *name)
+static int Find_by_name(const struct contact *ps, char *name)
 {
 	int i = 0;
 	for (i = 0; i < ps->size; i++)
@@ -117,8 +117,8 @@ void del(struct contact *ps)
 	char name[NAME];
 	printf("请输入要删除的联系人的名字:>");
 	scanf("%s", name);
-	int ret=Find_by_name(ps, name);
-	if (ret==-1)
+	int ret = Find_by_name(ps, name);
+	if (ret == -1)
 	{
 		printf("查无此人!\n");
 	}
@@ -127,9 +127,9 @@ void del(struct contact *ps)
 		/*int j = 0;
 		for (j = i; j < ps->size - 1; j++)
 		{
-			ps->data[j] = ps->data[j + 1];
+		ps->data[j] = ps->data[j + 1];
 		}*/
-		memmove(&ps->data[ret], &ps->data[ret+ 1], (ps->size)*sizeof(ps->data[0]));
+		memmove(&ps->data[ret], &ps->data[ret + 1], (ps->size)*sizeof(ps->data[0]));
 		ps->size--;
 		printf("删除成功!\n");
 	}
@@ -141,7 +141,7 @@ void search(const struct contact *ps)
 	printf("请输入要查找联系人的名字:>");
 	scanf("%s", name);
 	int ret = Find_by_name(ps, name);
-	if (ret==-1)
+	if (ret == -1)
 	{
 		printf("查无此人!\n");
 	}
@@ -149,12 +149,12 @@ void search(const struct contact *ps)
 	{
 		printf("-------------------------------------------------------\n");
 		printf("   %-5s\t%-4s\t%-5s\t%-12s\t%-20s\n", "姓名", "年龄", "性别", "电话", "住址");
-			printf("%d. %-5s\t%-4d\t%-5s\t%-12s\t%-20s\n", ret + 1,
-				ps->data[ret].name,
-				ps->data[ret].age,
-				ps->data[ret].gender,
-				ps->data[ret].tele,
-				ps->data[ret].addr);
+		printf("%d. %-5s\t%-4d\t%-5s\t%-12s\t%-20s\n", ret + 1,
+			ps->data[ret].name,
+			ps->data[ret].age,
+			ps->data[ret].gender,
+			ps->data[ret].tele,
+			ps->data[ret].addr);
 		printf("-------------------------------------------------------\n");
 	}
 
@@ -191,8 +191,8 @@ void modify(struct contact *ps)
 			{
 			case Name:
 				printf("请输入姓名:>");
-				scanf("%s",a);
-				strcpy(ps->data[ret].name,a );
+				scanf("%s", a);
+				strcpy(ps->data[ret].name, a);
 				break;
 			case Age:
 				printf("请输入年龄:>");
@@ -217,13 +217,13 @@ void modify(struct contact *ps)
 			case Exit:
 				printf("已退出修改!\n");
 				break;
-			default :
+			default:
 				printf("输入错误，请重新输入!\n");
 				break;
 			}
 		} while (input);
-		if (input>=Name&&input<=Gender)
-		printf("修改成功!\n");
+		if (input >= Name&&input <= Gender)
+			printf("修改成功!\n");
 	}
 }
 int cmp_by_name(const void *e1, const void *e2)
@@ -240,29 +240,29 @@ int cmp_by_tele(const void* e1, const void*e2)
 {
 	return strcmp(((struct contact *)e1)->data->tele, ((struct contact *)e2)->data->tele);
 }
-void swap(char*buf1, char*buf2,int n)
+void swap(char*buf1, char*buf2, int n)
 {
 	int i;
 	for (i = 0; i < n; i++)
 	{
-		char temp=*buf1;
-		 *buf1 = *buf2;
-		 *buf2 = temp;
-		 buf1++;
-		 buf2++;
+		char temp = *buf1;
+		*buf1 = *buf2;
+		*buf2 = temp;
+		buf1++;
+		buf2++;
 	}
 }
-void bubble_sort(void* base, int sz, int width, int(*cmp)(const void* elem1,const void* elem2))
+void bubble_sort(void* base, int sz, int width, int(*cmp)(const void* elem1, const void* elem2))
 {
 	int i = 0;
-	for (i = 0; i < sz-1; i++)
+	for (i = 0; i < sz - 1; i++)
 	{
 		int j = 0;
 		for (j = 0; j < sz - 1 - i; j++)
 		{
 			if (cmp((char*)base + j*width, (char*)base + (j + 1)*width)>0)
 				swap((char*)base + j*width, (char*)base + (j + 1)*width, width);
-			
+
 		}
 	}
 }
@@ -321,8 +321,8 @@ void save_contact(struct contact *ps)
 	}
 	for (int i = 0; i < ps->size; i++)
 	{
-	   fwrite(&ps->data[i], sizeof(struct peoinfor), 1, pfwrite);
-		
+		fwrite(&ps->data[i], sizeof(struct peoinfor), 1, pfwrite);
+
 	}
 	fclose(pfwrite);
 	pfwrite = NULL;

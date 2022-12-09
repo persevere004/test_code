@@ -15,7 +15,7 @@ enum
 	MODIFY,
 	SEARCH,
 	PRINT,
-	SORT ,
+	SORT,
 	SAVE
 };
 enum

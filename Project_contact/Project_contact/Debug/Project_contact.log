@@ -1,9 +1,8 @@
-﻿生成启动时间为 2022/12/8 19:27:49。
+﻿生成启动时间为 2022/12/9 10:30:51。
      1>项目“C:\Users\宋畅\Desktop\test_code\Project_contact\Project_contact\Project_contact.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\Program Files (x86)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt contact.c test.c
          test.c
-     1>c:\users\宋畅\desktop\test_code\project_contact\project_contact\test.c : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
          contact.c
          正在生成代码...
        Link:
@@ -14,4 +13,4 @@
 
 生成成功。
 
-已用时间 00:00:00.89
+已用时间 00:00:01.46
