@@ -17,16 +17,16 @@ void Student_information(System *ps)
 {
 	assert(ps != NULL);
 	int choice = 0;
-	getchar();
 	do
 	{
 		stuinfor_menu();
 		printf("ÇëÑ¡Ôñ£º>");
 		scanf("%d", &choice);
+		getchar();
 		switch (choice)
 		{
 		case ADD_STU:
-			Add_stu(&ps);
+			//Add_stu(&ps);
 			break;
 		case DEL_STU:
 			break;

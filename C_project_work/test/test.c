@@ -32,7 +32,7 @@ int main()
 		switch (choice)
 		{
 		case STU_INFOR:
-			Student_information(&Stu);
+			//Student_information(&Stu);
 			break;
 		case CURRICULU_INFOR:
 			//Curriculum_information();
