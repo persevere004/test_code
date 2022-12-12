@@ -122,22 +122,65 @@ void Student_information(System *ps)
 	 }
 	 return -1;
  }
+ static int Find_by_ID(const System *ps, int ID)
+ {
+	 int i = 0;
+	 for (i = 0; i < ps->size; i++)
+	 {
+		 if (ID ==( ps->stu_data[i].ID))
+		 {
+			 return i;
+		 }
+	 }
+	 return -1;
+ }
 //查找学生信息
  void Search_stu(const System **ps)
  {
-		 char name[MAX_NAME];
-		 printf("请输入要查找的学生的名字:>");
-		 scanf("%s", name);
-		 int ret = Find_by_name((*ps), name);
+	 char name[MAX_NAME];
+	 int n = 0;
+	 int ID=0;
+	 int ret = 0;
+	 if ((*ps)->size == 0)
+	 {
+		 printf("暂无学生信息\n");
+	 }
+	 else
+	 {
+		 printf("按学号查找------1\n");
+		 printf("按名字查找------2\n");
+		 do
+		 {
+			 printf("请选择:>");
+			 scanf("%d", &n);
+			 if (n == 1)
+			 {
+				 printf("请输入要查找学生的学号:>");
+				 scanf("%d", &ID);
+				 ret=Find_by_ID((*ps), ID);
+				 break;
+			 }
+			 else if (n == 2)
+			 {
+				 printf("请输入要查找学生的姓名:>");
+				 scanf("%s", name);
+				 ret=Find_by_name((*ps), name);
+				 break;
+			 }
+			 else
+			 {
+				 printf("输入错误，请重新输入！\n");
+			 }
+		 } while (1);
 		 if (ret == -1)
 		 {
 			 printf("查无此人!\n");
 		 }
 		 else
 		 {
-			 printf("-------------------------------------------------------\n");
-			 printf("   %-10s\t%-5s\t%-12s\t%-20s\t%-20s\t%-15s\t%-20s\n", "学号", "姓名", "性别", "出生年月", "住址", "电话号码", "邮箱");
-			 printf(" %-10s\t%-5s\t%-12s\t%-20s\t%-20s\t%-15s\t%-20s\n", 
+			 printf("------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+			 printf(" %-12s\t%-10s\t%-12s\t%-10s\t%-25s\t%-20s\t%-30s\n", "学号", "姓名", "性别", "出生年月", "住址", "电话号码", "邮箱");
+			 printf(" %-12d\t%-10s\t%-12s\t%-10s\t%-25s\t%-20s\t%-30s\n",
 				 (*ps)->stu_data[ret].ID,
 				 (*ps)->stu_data[ret].name,
 				 (*ps)->stu_data[ret].gender,
@@ -145,8 +188,9 @@ void Student_information(System *ps)
 				 (*ps)->stu_data[ret].Addr,
 				 (*ps)->stu_data[ret].Tel,
 				 (*ps)->stu_data[ret].E_mail);
-			 printf("-------------------------------------------------------\n");
+			 printf("------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 		 }
+	 }
 }
  //显示学生信息
  void print(const System *ps)
@@ -160,11 +204,11 @@ void Student_information(System *ps)
 	 {
 		
 		 int i = 0;
-		 printf("--------------------------------------------------------------------------------------------------------------\n");
-		 printf("   %-10s\t%-5s\t%-12s\t%-20s\t%-20s\t%-15s\t%-20s\n", "学号", "姓名", "性别", "出生年月", "住址","电话号码","邮箱");
+		 printf("------------------------------------------------------------------------------------------------------------------------------------------------------\n");
+		 printf("   %-12s\t%-10s\t%-5s\t%-10s\t%-25s\t%-20s\t%-25s\n", "学号", "姓名", "性别", "出生年月", "住址","电话号码","邮箱");
 		 for (i = 0; i < ps->size; i++)
 		 {
-			 printf("%d. %-10s\t%-5s\t%-12s\t%-20s\t%-20s\t%-15s\t%-20s\n", i + 1,
+			 printf("%d. %-12d\t%-10s\t%-5s\t%-10s\t%-25s\t%-20s\t%-25s\n", i + 1,
 				 ps->stu_data[i].ID,
 				 ps->stu_data[i].name,
 				 ps->stu_data[i].gender,
@@ -173,6 +217,6 @@ void Student_information(System *ps)
 				 ps->stu_data[i].Tel,
 				 ps->stu_data[i].E_mail);
 		 }
-		 printf("------------------------------------------------------------------------------------------------------------\n");
+		 printf("------------------------------------------------------------------------------------------------------------------------------------------------------\n");
 	 }
  }
