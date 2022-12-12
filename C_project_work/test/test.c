@@ -2,7 +2,7 @@
 #include "Student_Score_Administration.h"
 void main_menu()
 {
-	system("cls");
+	//system("cls");
 	printf("-----------------------------------------------\n");
 	printf("************   学生信息管理系统    ************\n");
 	printf("************    1.学生信息维护     ************\n");
@@ -32,7 +32,7 @@ int main()
 		switch (choice)
 		{
 		case STU_INFOR:
-			//Student_information(&Stu);
+			Student_information(&Stu);
 			break;
 		case CURRICULU_INFOR:
 			//Curriculum_information();
@@ -53,7 +53,7 @@ int main()
 			//Average_sort();
 			break;
 		case PRESENT:
-			print();
+			print(&Stu);
 			break;
 		case SAVE:
 			//Save_infor();
@@ -61,10 +61,10 @@ int main()
 			break;
 		case EXIT:
 			//Save_infor();
-			printf("退出系统\n");
+			printf("已退出\n");
 			break;
 		default :
-			printf("输入错误，请重新输入！");
+			printf("输入错误，请重新输入\n！");
 			break;
 		}
 	} while (choice);

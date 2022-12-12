@@ -26,13 +26,14 @@ void Student_information(System *ps)
 		switch (choice)
 		{
 		case ADD_STU:
-			//Add_stu(&ps);
+		    Add_stu(&ps);//添加学生信息
 			break;
 		case DEL_STU:
 			break;
 		case MODIFY:
 			break;
 		case SEARCH:
+			Search_stu(&ps);//查找学生信息
 			break;
 		case Exit:
 			break;
@@ -66,11 +67,11 @@ void Student_information(System *ps)
 	 assert(ps != NULL);
 	 if (ps->size == ps->capacity)
 	 {
-		 struct Stuinfor *p = (Stuinfor *)realloc(ps->stu_data, (ps->capacity + 2)*sizeof(System));//修正动态分配的空间
-		 if (p != NULL)
+		 ps->stu_data = (Stuinfor *)realloc(ps->stu_data, (ps->capacity + 2)*sizeof(Stuinfor));//修正动态分配的空间
+		 if (ps != NULL)
 		 {
 			 (ps->capacity) = (ps->capacity) + 2;
-			 ps->stu_data = p;
+			// ps->stu_data = p;
 			 printf("扩容成功\n");
 		 }
 		 else
@@ -88,7 +89,7 @@ void Student_information(System *ps)
 	 assert(*ps != NULL);
 	 Isfull(*ps);
 	 printf("请输入学号：>");
-	 scanf("%d",&((*ps)->stu_data[(*ps)->size]).ID);
+	 scanf("%d", &((*ps)->stu_data[(*ps)->size]).ID);
 	 printf("请输入姓名：>");
 	 scanf("%s", (*ps)->stu_data[(*ps)->size].name);
 	 //gets((*ps)->stu_data[(*ps)->size].name);
@@ -109,19 +110,57 @@ void Student_information(System *ps)
 	 (*ps)->size++;
 	 printf("添加成功\n");
  }
+ static int Find_by_name(const System *ps, char *name)
+ {
+	 int i = 0;
+	 for (i = 0; i < ps->size; i++)
+	 {
+		 if (strcmp(name, ps->stu_data[i].name) == 0)
+		 {
+			 return i;
+		 }
+	 }
+	 return -1;
+ }
+//查找学生信息
+ void Search_stu(const System **ps)
+ {
+		 char name[MAX_NAME];
+		 printf("请输入要查找的学生的名字:>");
+		 scanf("%s", name);
+		 int ret = Find_by_name((*ps), name);
+		 if (ret == -1)
+		 {
+			 printf("查无此人!\n");
+		 }
+		 else
+		 {
+			 printf("-------------------------------------------------------\n");
+			 printf("   %-10s\t%-5s\t%-12s\t%-20s\t%-20s\t%-15s\t%-20s\n", "学号", "姓名", "性别", "出生年月", "住址", "电话号码", "邮箱");
+			 printf(" %-10s\t%-5s\t%-12s\t%-20s\t%-20s\t%-15s\t%-20s\n", 
+				 (*ps)->stu_data[ret].ID,
+				 (*ps)->stu_data[ret].name,
+				 (*ps)->stu_data[ret].gender,
+				 (*ps)->stu_data[ret].birth,
+				 (*ps)->stu_data[ret].Addr,
+				 (*ps)->stu_data[ret].Tel,
+				 (*ps)->stu_data[ret].E_mail);
+			 printf("-------------------------------------------------------\n");
+		 }
+}
  //显示学生信息
  void print(const System *ps)
  {
 	 assert(ps!=NULL);
 	 if (ps->size == 0)
 	 {
-		 printf("通讯录为空\n");
+		 printf("学生信息为空\n");
 	 }
 	 else
 	 {
-		 //printf("                       通讯录\n");
+		
 		 int i = 0;
-		 printf("-------------------------------------------------------\n");
+		 printf("--------------------------------------------------------------------------------------------------------------\n");
 		 printf("   %-10s\t%-5s\t%-12s\t%-20s\t%-20s\t%-15s\t%-20s\n", "学号", "姓名", "性别", "出生年月", "住址","电话号码","邮箱");
 		 for (i = 0; i < ps->size; i++)
 		 {
@@ -134,6 +173,6 @@ void Student_information(System *ps)
 				 ps->stu_data[i].Tel,
 				 ps->stu_data[i].E_mail);
 		 }
-		 printf("-------------------------------------------------------\n");
+		 printf("------------------------------------------------------------------------------------------------------------\n");
 	 }
  }

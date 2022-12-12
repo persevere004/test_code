@@ -73,8 +73,10 @@ void Score_sort();
 //学生平均分排名
 void Average_sort();
 //显示学生信息
-void print();
+void print(const System *ps);
 //保存学生信息
 void Save_infor();
 //添加学生信息
-void Add_stu(System *ps);
+void Add_stu(System** ps);
+//查找学生信息
+void Search_stu(const System **ps);
