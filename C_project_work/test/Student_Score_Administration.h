@@ -47,7 +47,7 @@ enum
 	TEL=6,
 	E_MAIL=7
 };
-typedef struct Stuinfor
+typedef struct Stu_infor
 {
 	int ID;
 	char name[MAX_NAME];
@@ -57,21 +57,34 @@ typedef struct Stuinfor
 	char Tel[MAX_TELE];
 	char E_mail[MAX_MAIL];
 
-}Stuinfor;
+}Stu_infor;
 
-typedef struct System
+typedef struct System1
 {
-	struct Stuinfor *stu_data;
-	int size;
-	int capacity;
-}System;
+	struct Stu_infor *stu_data;
+	int stu_size;
+	int stu_capacity;
+}System1;
 
+typedef struct Course_infor
+{
+	char course_name[MAX_NAME];
+	int course_NO;
+	int course_credit;
+}Course_infor;
+
+typedef struct System2
+{
+	struct Course_infor *Course_data;
+	int course_size;
+	int course_capacity;
+};
 //初始化学生信息
-void Init_information(System *ps);
+void Init_information(System1 *ps);
 //学生信息维护
-void Student_infor(System *ps);
+void Student_information(System1 *ps);
 //课程信息维护
-void Curriculum_information();
+void Course_information();
 //成绩信息维护
 void Score_information();
 //学生成绩统计
@@ -83,14 +96,14 @@ void Score_sort();
 //学生平均分排名
 void Average_sort();
 //显示学生信息
-void print(const System *ps);
+void print(const System1 *ps);
 //保存学生信息
 void Save_infor();
 //添加学生信息
-void Add_stu(System **ps);
+void Add_stu(System1 **ps);
 //删除学生信息
-void Del_stu(System **ps);
+void Del_stu(System1 **ps);
 //修改学生信息
-void Modify_stu(System **ps);
+void Modify_stu(System1 **ps);
 //查找学生信息
-void Search_stu(const System **ps);
+void Search_stu(const System1 **ps);

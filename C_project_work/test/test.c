@@ -20,7 +20,7 @@ void main_menu()
 
 int main()
 {
-     System Stu;
+     System1 Stu;
 	Init_information(&Stu);
 	int choice=0;
     do
@@ -35,7 +35,7 @@ int main()
 			Student_information(&Stu);
 			break;
 		case CURRICULU_INFOR:
-			//Curriculum_information();
+			//Course_information(&);
 			break;
 		case SCORE_INFOR:
 			//Score_information();
