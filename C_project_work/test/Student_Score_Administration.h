@@ -37,6 +37,16 @@ enum
 	SEARCH
 
 };
+enum
+{
+	Id=1,
+	NAME=2,
+	GENDER=3,
+	BIRTH=4,
+	ADDR=5,
+	TEL=6,
+	E_MAIL=7
+};
 typedef struct Stuinfor
 {
 	int ID;
@@ -77,6 +87,10 @@ void print(const System *ps);
 //保存学生信息
 void Save_infor();
 //添加学生信息
-void Add_stu(System** ps);
+void Add_stu(System **ps);
+//删除学生信息
+void Del_stu(System **ps);
+//修改学生信息
+void Modify_stu(System **ps);
 //查找学生信息
 void Search_stu(const System **ps);

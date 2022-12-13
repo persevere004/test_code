@@ -1,4 +1,4 @@
-﻿生成启动时间为 2022/12/12 23:11:29。
+﻿生成启动时间为 2022/12/13 8:55:31。
      1>项目“C:\Users\宋畅\Desktop\test_code\C_project_work\test\test.vcxproj”在节点 2 上(Build 个目标)。
      1>ClCompile:
          D:\Program Files (x86)\VC\bin\CL.exe /c /Z7 /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /GF /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt Student_Score_Administration.c
@@ -12,4 +12,4 @@
 
 生成成功。
 
-已用时间 00:00:00.78
+已用时间 00:00:00.97
