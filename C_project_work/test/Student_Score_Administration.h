@@ -4,14 +4,13 @@
 #include <stdlib.h>
 #include <errno.h>
 #include<assert.h>
-//#define MAX_ID 20
 #define MAX_NAME 20
 #define MAX_GENDER 20
 #define MAX_BIRTH 20
 #define MAX_Addr 40
 #define MAX_TELE 15
 #define MAX_MAIL 20
-#define DEFAULT_SZ 3//默认stu_data初始size为3
+#define DEFAULT_SZ 5
 
 enum
 {
@@ -23,18 +22,17 @@ enum
 	CREDIT_STATISTICS,
 	SORT_BY_SCORE,
 	SORT_BY_AVERAGE,
-	PRESENT,
 	SAVE
 
 };
 
 enum
 {
-	Exit,
-	ADD_STU,
-	DEL_STU,
-	MODIFY,
-	SEARCH
+	ADD=1,
+	DEL=2,
+	MODIFY=3,
+	SEARCH=4,
+	PRENSENT=5
 
 };
 enum
@@ -46,6 +44,12 @@ enum
 	ADDR=5,
 	TEL=6,
 	E_MAIL=7
+};
+enum
+{
+	COURSENO = 1,
+	COURSENAME = 2,
+	COURSECREDIT=3
 };
 typedef struct Stu_infor
 {
@@ -75,12 +79,12 @@ typedef struct Course_infor
 
 typedef struct System2
 {
-	struct Course_infor *Course_data;
+	struct Course_infor *course_data;
 	int course_size;
 	int course_capacity;
-};
+}System2;
 //初始化学生信息
-void Init_information(System1 *ps);
+void Init_Stu_data(System1 *ps);
 //学生信息维护
 void Student_information(System1 *ps);
 //课程信息维护
@@ -95,8 +99,6 @@ void Credit_statistics();
 void Score_sort();
 //学生平均分排名
 void Average_sort();
-//显示学生信息
-void print(const System1 *ps);
 //保存学生信息
 void Save_infor();
 //添加学生信息
@@ -107,3 +109,18 @@ void Del_stu(System1 **ps);
 void Modify_stu(System1 **ps);
 //查找学生信息
 void Search_stu(const System1 **ps);
+//显示学生信息
+void Print_stu(const System1 **ps);
+//初始化课程信息
+void Init_Course_data(System2 *pc);
+//添加课程信息
+void Add_course(System2 **pc);
+//删除课程信息
+void Del_course(System2 **pc);
+//修改课程信息
+void Modify_course(System2 **pc);
+//查找课程信息
+void Search_course(const System2 **pc);
+//显示课程信息
+void Print_course(const System2 **pc);
+
