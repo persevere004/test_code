@@ -727,7 +727,7 @@ void Student_information(System1 *ps)
 		 }
 	 }
  }
- //显示学生信息
+ //显示课程信息
  void Print_course(const System2 **pc)
  {
 	 int i = 0;
