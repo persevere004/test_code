@@ -1,6 +1,5 @@
 #define  _CRT_SECURE_NO_WARNINGS  1
 //#include<assert.h>
-#include<stdio.h>
 //int main()
 //{
 //	int arr[10] = { 0 };
@@ -522,57 +521,58 @@
 //	printf("\n");
 //	return 0;
 //}
-//#include <string.h>
-//#include <stdio.h>
-//#include <stdlib.h>
-//struct Stu
-//{
-//	char name[20];
-//	int age;
-//};
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
+struct Stu
+{
+	char name[20];
+	int age;
+};
 //
-//int cmp_by_name(const void *elem1, const void *elem2)
-//{
-//	return strcmp(((struct Stu*)elem1)->name,((struct Stu*)elem2)->name);
-//}
-//void swap(char*buf1, char*buf2,int n)
-//{
-//	int i;
-//	for (i = 0; i < n; i++)
-//	{
-//		char temp=*buf1;
-//		 *buf1 = *buf2;
-//		 *buf2 = temp;
-//		 buf1++;
-//		 buf2++;
-//	}
-//}
-//void bubble_sort(void* base, int sz, int width, int(*cmp)(const void* elem1,const void* elem2))
-//{
-//	int i = 0;
-//	for (i = 0; i < sz-1; i++)
-//	{
-//		int j = 0;
-//		for (j = 0; j < sz - 1 - i; j++)
-//		{
-//			if (cmp((char*)base + j*width, (char*)base + (j + 1)*width)>0)
-//				swap((char*)base + j*width, (char*)base + (j + 1)*width, width);
-//			
-//		}
-//	}
-//}
-//int main()
-//{
-//	struct Stu s[3] = { { "zhangsan", 10 }, { "lishi", 20 }, { "wangwu", 30 } };
-//	int s[] = { 5, 4, 2, 4, 5, 6 };
-//	int sz = sizeof(s) / sizeof(s[0]);
-//	bubble_sort(s, sz, sizeof(s[0]),cmp_by_name);
-//	for (int i = 0; i < sz; i++)
-//	{
-//		printf("%s ", (s+i)->name);
-//	}
-//	return 0;
-//}
+int cmp_by_name(const void *elem1, const void *elem2)
+{
+	return strcmp(((struct Stu*)elem1)->name,((struct Stu*)elem2)->name);
+}
+void swap(char*buf1, char*buf2,int n)
+{
+	int i;
+	for (i = 0; i < n; i++)
+	{
+		char temp=*buf1;
+		 *buf1 = *buf2;
+		 *buf2 = temp;
+		 buf1++;
+		 buf2++;
+	}
+}
+void bubble_sort(void* base, int sz, int width, int(*cmp)(const void* elem1,const void* elem2))
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < sz-1; i++)
+	{
+		for (j = 0; j < sz - 1 - i; j++)
+		{
+			if (cmp((char*)base + j*width, (char*)base + (j + 1)*width)>0)
+				swap((char*)base + j*width, (char*)base + (j + 1)*width, width);
+			
+		}
+	}
+}
+int main()
+{
+	struct Stu s[3] = { { "zhangsan", 10 }, { "aishi", 20 }, { "wangwu", 30 } };
+	/*int s[] = { 5, 4, 2, 4, 5, 6 };*/
+	int sz = sizeof(s) / sizeof(s[0]);
+	//bubble_sort(s, sz, sizeof(s[0]),cmp_by_name);
+	qsort(s, sz, sizeof(s[0]), cmp_by_name);
+	for (int i = 0; i < sz; i++)
+	{
+		printf("%s ", (s+i)->name);
+	}
+	return 0;
+}
 //#include <string.h>
 //#include <stdio.h>
 //	/*int a[] = { 1, 2, 3, 4 };*/
@@ -846,12 +846,22 @@
 //		 printf("%s\n", c[i]);
 //	 return 0;
 // }
-void main()
-{
-	printf("------------------------------------------------------\n");
-	printf("*********1.增加联系人     2.删除联系人****************\n");
-	printf("*********3.修改联系人     4.查找联系人****************\n");
-	printf("*********5.显示联系人     6.排序      ****************\n");
-	printf("*********7.保存通讯录     0.退出      ****************\n");
-	printf("------------------------------------------------------\n");
-}
+//#include <stdio.h>
+//int compare(const void* elem1, const void* elem2)
+//{
+//	return *(int*)elem1 - *(int*)elem2;
+//}
+//int main()
+//{
+//	int i = 0;
+//	int a[10] = { 2, 1, 3, 5, 6, 4, 8, 7, 9, 0 };
+//	int sz = sizeof(a) / sizeof(a[0]);
+//	qsort(a, sz, sizeof(a[0]), compare);
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", a[i]);
+//	}
+//	return 0;
+//}
+
+
