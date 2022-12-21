@@ -88,7 +88,7 @@ void Init_Stu_data(System1 *ps);
 //学生信息维护
 void Student_information(System1 *ps);
 //课程信息维护
-void Course_information();
+void Course_information(System2 *pc);
 //成绩信息维护
 void Score_information();
 //学生成绩统计
